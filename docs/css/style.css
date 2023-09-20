@@ -1,0 +1,162 @@
+:root {
+	height: 100%;
+	font-size: 18px;
+}
+@media (max-width: 719px) {
+	:root {
+		font-size: 2.5vw;
+	}
+}
+@media (max-width: 599px) {
+	:root {
+		font-size: 15px;
+	}
+}
+@media (max-width: 299px) {
+	:root {
+		font-size: 5vw;
+	}
+}
+body {
+	background: #222;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.nobreak {
+	white-space: nowrap;
+	hyphens: none;
+}
+#countdown {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#next {
+	font-family: Arial, sans-serif;
+	font-size: 2em;
+	color: #eee;
+	text-align: center;
+}
+#clock {
+	margin-top: 1rem;
+	display: grid;
+	grid-template-columns: 4rem 4rem 1fr 4rem 4rem 1fr 4rem 4rem 1fr 4rem 4rem;
+	grid-template-rows: 6rem 4rem;
+	column-gap: 0.1rem;
+	color: #eee;
+}
+#clock > * {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.clock-top {
+	font-family: Arial, sans-serif;
+	font-size: 4em;
+}
+.clock-bottom {
+	font-family: Arial, sans-serif;
+	font-size: 1.5em;
+}
+.clock-digit {
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+.clock-sep {
+	position: relative;
+	bottom: 0.08em;
+}
+.clock-label {
+	grid-column-end: span 2;
+}
+@media (max-width: 599px) {
+	#clock {
+		grid-template-columns: 4rem 4rem 1fr 4rem 4rem;
+		grid-template-rows: 6rem 3rem 7rem 3rem;
+	}
+	.clock-top.clock-left {
+		grid-row: 1;
+	}
+	.clock-bottom.clock-left {
+		grid-row: 2;
+	}
+	.clock-top.clock-right {
+		grid-row: 3;
+		margin-top: 1rem;
+	}
+	.clock-bottom.clock-right {
+		grid-row: 4;
+	}
+	#clock > :not(.clock-left):not(.clock-right) {
+		display: none;
+	}
+}
+.link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: #aaa;
+}
+.link:hover,
+.link:focus-visible {
+	color: #eee;
+}
+@media (hover: none, pointer: coarse) {
+	.link:hover {
+		color: #aaa;
+	}
+	.link:active {
+		color: #eee;
+	}
+}
+.link-icon {
+	margin-right: 0.2em;
+	width: 1em;
+	height: 1em;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: auto 3em;
+}
+.link:hover .link-icon,
+.link:focus-visible .link-icon {
+	background-position-y: -2em;
+}
+@media (hover: none, pointer: coarse) {
+	.link:hover .link-icon {
+		background-position-y: 0;
+	}
+	.link:active .link-icon {
+		background-position-y: -2em;
+	}
+}
+.link-label {
+	position: relative;
+	top: 0.07em;
+}
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1rem;
+	font-family: Arial, sans-serif;
+	font-size: 1.5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 1rem;
+	
+}
+#read_icon {
+	background-image: url(../img/icons/jnovelclub.svg);
+}
+#src_icon {
+	background-image: url(../img/icons/github.svg);
+}
